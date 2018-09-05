@@ -5,7 +5,7 @@ set -e
 export MSYS_NO_PATHCONV=1
 starttime=$(date +%s)
 LANGUAGE=${1:-"golang"}
-CC_SRC_PATH=github.com/fabcar/go
+CC_SRC_PATH=github.com/
 if [ "$LANGUAGE" = "node" -o "$LANGUAGE" = "NODE" ]; then
 	CC_SRC_PATH=/opt/gopath/src/github.com/fabcar/node
 fi
@@ -14,7 +14,7 @@ fi
 rm -rf ./hfc-key-store
 
 # launch network; create channel and join peer to channel
-cd ../basic-network
+cd ./basic-network
 ./start.sh
 
 # Now launch the CLI container in order to install, instantiate chaincode
